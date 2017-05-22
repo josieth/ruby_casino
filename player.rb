@@ -18,4 +18,8 @@ class Player
 
     #puts 'new player!'
   end
+
+  def get_name
+    return @name
+  end
 end
