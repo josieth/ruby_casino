@@ -1,5 +1,7 @@
+require_relative "wallet"
+
 class Player
-  attr_accessor :name, :age, :gender
+  attr_accessor :name, :age, :gender, :wallet
 
   def initialize
     # need to think about how to implement the wallet
@@ -11,7 +13,8 @@ class Player
     @age = gets.strip.to_i
     puts "What is your gender #{@name}?"
     @gender = gets.strip
-
+    puts "How much money are you playing with?"
+    @wallet =  Wallet.new(gets.strip.to_f)
 
     #puts 'new player!'
   end

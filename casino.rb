@@ -6,9 +6,11 @@ require 'colorize'
 require_relative 'player'
 
 class Casino
+  attr_accessor :player
   def initialize
     puts 'Welcome To Our Ruby Casino!'
-    @player = Player.new 
+    @player = Player.new
+    binding.pry
   end
 end
 
