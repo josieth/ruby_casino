@@ -4,5 +4,3 @@ class Wallet
     @amount = amount
   end
 end
-
-    
