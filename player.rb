@@ -23,3 +23,6 @@ class Player
     return @name
   end
 end
+
+
+
