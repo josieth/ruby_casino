@@ -4,11 +4,8 @@ require 'colorize'
 #Pull in other classes you may need
 require_relative 'player'
 require_relative 'heads_or_tails'
-<<<<<<< HEAD
-#require_relative name of file mike is working on for black jack
-=======
 require_relative 'blackjack'
->>>>>>> Updates
+
 
 class Casino
   attr_accessor :player
@@ -36,27 +33,13 @@ class Casino
       when 3
         Roulette.new(@player)
       when 4
-        "Puts ok, have a nice day."
-      exit
+        Puts "ok, have a nice day."
+        exit
       else
         puts "That game is not offered here.  Sorry, choose again"
         casino_menu
-      end
-
-    #casino options
-    #game options
-    #Player can add more money
-    #quit
-<<<<<<< HEAD
-
-=======
-    #HeadsTails.new(player)
-    Blackjack.new(@player)
->>>>>>> Updates
+    end
   end
-
-
 end
-
 
 Casino.new
