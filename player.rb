@@ -13,3 +13,4 @@ class Player
     print "\nHow much money are you playing with? "
     @wallet =  Wallet.new(gets.strip.to_f)
   end
+end
