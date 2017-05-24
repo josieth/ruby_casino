@@ -29,7 +29,7 @@ class Casino
       when 1
         HeadsTails.new(@player)
       when 2
-        BlackJack.new(@player)
+        Blackjack.new(@player)
       when 3
         Roulette.new(@player)
       when 4
