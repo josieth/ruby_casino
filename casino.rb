@@ -11,17 +11,14 @@ class Casino
   attr_accessor :player
 
   def initialize
-    puts 'Welcome To Our Ruby Casino!'
+    puts "\nWelcome to the Ruby Casino!"
     @player = Player.new
     casino_menu
   end
 
   def casino_menu
-    game_array = ["HeadsTails", "BlackJack", "Roulette"]
-    puts "What game would you like to play #{@player.get_name}?"
-    puts game_array
-    puts "For HeadsTails enter 1, For BlackJack enter 2, for Poker enter 3, to exit
-    the casino type 4."
+    puts "\nWhat game would you like to play, #{@player.name}?"
+    print "\n(1) Heads or tails enter\n(2) Blackjack\n(3) Poker\n(4) Exit the casino\nEnter selection: "
 
     game_choice = gets.chomp.to_i
 
@@ -33,10 +30,10 @@ class Casino
       when 3
         Roulette.new(@player)
       when 4
-        Puts "ok, have a nice day."
+        puts "\nThank you for visiting. Goodbye."
         exit
       else
-        puts "That game is not offered here.  Sorry, choose again"
+        puts "\nInvalid selection."
         casino_menu
     end
   end
