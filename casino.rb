@@ -18,7 +18,7 @@ class Casino
 
   def casino_menu
     puts "\nWhat game would you like to play, #{@player.name}?"
-    print "\n(1) Heads or tails enter\n(2) Blackjack\n(3) Poker\n(4) Exit the casino\nEnter selection: "
+    print "\n(1) Heads or tails enter\n(2) Blackjack\n(3) Poker\n(4) Exit the casino\n\nEnter selection: "
 
     game_choice = gets.chomp.to_i
 

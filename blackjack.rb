@@ -5,7 +5,6 @@ class Blackjack
   attr_accessor :player, :deck, :winnings, :cards
 
 def initialize(player)
-  puts player
   @deck = Deck.new
   @winnings = 0
   run_game
@@ -61,7 +60,7 @@ def run_game
       total += card3.value
       puts "\nYour cards total #{total}."
       if total > 21
-        puts "\nBust! Next hand..."
+        puts "\nBust! You lose!".red
         @winnings -= bet
         run_game
       end
@@ -70,7 +69,7 @@ def run_game
       alt_total = total + 10
       puts "\nYour cards total #{total} or #{alt_total}."
       if total > 21 && alt_total > 21
-        puts "\nBust! Next hand..."
+        puts "\nBust! You lose!".red
         @winnings -= bet
         run_game
       end
@@ -79,7 +78,7 @@ def run_game
       alt_total += card3.value
       puts "\nYour cards total either #{total} or #{alt_total}."
       if total > 21 && alt_total > 21
-        puts "\nBust! Next hand..."
+        puts "\nBust! You lose!".red
         @winnings -= bet
         run_game
       end
@@ -90,7 +89,7 @@ def run_game
       alt_total3 = alt_total + 1
       puts "\nYour cards total either #{total}, #{alt_total}, #{alt_total2}, or #{alt_total3}."
       if total > 21 && alt_total > 21 && alt_total2 > 21 && alt_total3 > 21
-        puts "\nBust! Next hand..."
+        puts "\nBust! You lose!".red
         @winnings -= bet
         run_game
       end
@@ -106,7 +105,7 @@ def run_game
         total += card4.value
         puts "\nYour cards total #{total}."
         if total > 21
-          puts "\nBust! Next hand..."
+          puts "\nBust! You lose!".red
           @winnings -= bet
           run_game
         end
@@ -115,7 +114,7 @@ def run_game
         alt_total = total + 11
         puts "\nYour cards total #{total} or #{alt_total}."
         if total > 21 && alt_total > 21
-          puts "\nBust! Next hand..."
+          puts "\nBust! You lose!".red
           @winnings -= bet
           run_game
         end
@@ -124,7 +123,7 @@ def run_game
         alt_total += card4.value
         puts "\nYour cards total either #{total} or #{alt_total}."
         if total > 21 && alt_total > 21
-          puts "\nBust! Next hand..."
+          puts "\nBust! You lose!".red
           @winnings -= bet
           run_game
         end
@@ -135,7 +134,7 @@ def run_game
       alt_total3 += card4.value
       puts "\nYour cards total either #{total}, #{alt_total}, #{alt_total2}, or #{alt_total3}."
       if total > 21 && alt_total > 21
-        puts "\nBust! Next hand..."
+        puts "\nBust! You lose!".red
         @winnings -= bet
         run_game
       end
@@ -144,7 +143,7 @@ def run_game
     alt_total += 11
     puts "\nYour cards total either #{total} or #{alt_total}"
     if total > 21 && alt_total > 21
-      puts "\nBust! Next hand..."
+      puts "\nBust! You lose!".red
       @winnings -= bet
       run_game
     end
@@ -157,7 +156,7 @@ def run_game
     alt_total5 = alt_total3 - 10
     puts "\nYour cards total either #{total}, #{alt_total}, #{alt_total2}, #{alt_total3}, #{alt_total4}, or #{alt_total5}."
     if total > 21 && alt_total > 21
-      puts "\nBust! Next hand..."
+      puts "\nBust! You lose!".red
       @winnings -= bet
       run_game
     end
@@ -173,7 +172,7 @@ end
       dtotal += dcard3.value
       puts "\nDealer's cards total #{dtotal}."
       if dtotal > 21
-        puts "\nDealer busts! Next hand..."
+        puts "\nDealer busts! You win!".green
         @winnings += bet
         run_game
       end
@@ -182,7 +181,7 @@ end
       dalt_total = dtotal + 10
       puts "\nDealer's cards total #{dtotal} or #{dalt_total}."
       if dtotal > 21 && dalt_total > 21
-        puts "\nDealer busts! Next hand..."
+        puts "\nDealer busts! You win!".green
         @winnings += bet
         run_game
       end
@@ -191,7 +190,7 @@ end
       dalt_total += dcard3.value
       puts "\nDealer's cards total either #{dtotal} or #{dalt_total}."
       if dtotal > 21 && dalt_total > 21
-        puts "\nDealer busts! Next hand..."
+        puts "\nDealer busts! You win!".green
         @winnings += bet
         run_game
       end
@@ -202,7 +201,7 @@ end
       dalt_total3 = dalt_total - 10
       puts "\nDealer's cards total either #{dtotal}, #{dalt_total}, #{dalt_total2}, or #{dalt_total3}."
       if dtotal > 21 && dalt_total > 21 && dalt_total2 > 21 && dalt_total3 > 21
-        puts "\nDealer busts! Next hand..."
+        puts "\nDealer busts! You win!".green
         @winnings += bet
         run_game
       end
@@ -233,10 +232,10 @@ end
   end
   puts "\nYour cards final total: #{current_high}."
   if current_high > dcurrent_high
-    puts "\nYou won!"
+    puts "\nYou won!".colorize(:green)
     @winnings += bet
   else
-    puts "\nYou lost!"
+    puts "\nYou lost!".red
     @winnings -= bet
   end
   print "\nPlay again (Y/N)? "
